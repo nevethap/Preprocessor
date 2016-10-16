@@ -8,7 +8,7 @@ For colour images :
 
 For green channel images :
 
-   python src/preprocess_green.py -i input_folder_path -o output_folder_path -t rain/test
+   python src/preprocess_green.py -i input_folder_path -o output_folder_path -t train/test
 
 ## Options :
 
