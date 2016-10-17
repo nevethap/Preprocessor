@@ -7,6 +7,7 @@ import os
 import getopt
 from joblib import Parallel, delayed
 import multiprocessing
+import pandas as pd
 
 
 def apply_mask(matrix, mask, fill_value):
@@ -107,6 +108,8 @@ def preprocess_image(file, train_or_test, output_path):
         enh_img = cv2.bilateralFilter(enh_img, 5, 75, 75)
 
         cv2.imwrite(output_path + file, enh_img)
+        sys.stdout.write("\rProcessing file %s" % file)
+        sys.stdout.flush()
 
         if train_or_test == 'train':
             flipped_img = cv2.flip(enh_img, 0)
